@@ -1,5 +1,7 @@
 import React from "react";
-import "./style.css";
+import "../Home/style.css";
+
+
 
 function Home() {
   return (
@@ -8,14 +10,7 @@ function Home() {
         <nav className="navbar">
           <div className="container">
             <div className="navbar-brand">
-              <a className="navbar-item" href>
-                <img src="images/smiling-sun.jpg" alt="smiling-sun" />
-              </a>
-              <span className="navbar-burger burger" data-target="navbarMenu">
-                <span />
-                <span />
-                <span />
-              </span>
+            {/* image deleted amk */}
             </div>
             <div id="navbarMenu" className="navbar-menu">
               <div className="navbar-end">
@@ -43,13 +38,12 @@ function Home() {
           </div>
         </nav>
       </div>
+      <div className="themeImage"> 
       <div className="hero-body">
         <div className="container has-text-centered">
           <div className="columns is-vcentered">
             <div className="column is-5">
-              <figure className="image is-4by3">
-                <img src="images/calm-picture.png" alt="calm-picture" />
-              </figure>
+              {/* deleted calm picture*/}
             </div>
             <div className="column is-6 is-offset-1">
               <h1 className="title is-2">Dying to Find Love</h1>
@@ -59,13 +53,16 @@ function Home() {
               </h2>
               <br />
               <p className="has-text-centered">
-                <a className="button is-medium is-info is-outlined">
+                <div className="button is-medium is-info is-outlined">
+                  <Link to="/Survey">
                   Learn more
-                </a>
+                  </Link>
+                </div>
               </p>
             </div>
           </div>
         </div>
+      </div>
       </div>
       <div className="hero-foot">
         <div className="container">
@@ -79,6 +76,7 @@ function Home() {
         </div>
       </div>
     </section>
+    
   );
 }
 
