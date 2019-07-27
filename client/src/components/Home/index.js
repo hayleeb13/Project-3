@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 function Home() {
@@ -59,9 +60,11 @@ function Home() {
               </h2>
               <br />
               <p className="has-text-centered">
-                <a className="button is-medium is-info is-outlined">
+                <div className="button is-medium is-info is-outlined">
+                  <Link to="/Survey">
                   Learn more
-                </a>
+                  </Link>
+                </div>
               </p>
             </div>
           </div>
