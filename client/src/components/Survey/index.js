@@ -144,7 +144,7 @@ function Survey() {
                           <div className="field has-addons">
                               <select>
                                 <option>Select from</option>
-                                <option>With appropo doom and despair</option>
+                                <option>With apropos doom and despair</option>
                                 <option>With positivity and hope for change</option>
                               </select>
                           </div>
