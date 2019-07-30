@@ -1,5 +1,7 @@
 import React from "react";
-import "./style.css";
+import "../Survey/style.css";
+import { Link } from "react-router-dom";
+
 
 function Survey() {
 
@@ -7,165 +9,184 @@ function Survey() {
 
           <section className="hero is-fullheight is-default is-bold">
             <div className="hero-head">
-              <nav className="navbar">
+            <nav className="navbar">
                 <div className="container">
-                  <div className="navbar-brand">
-                    <a className="navbar-item" href>
-                      <img src="images/smiling-sun.jpg" alt="smiling-sun" />
-                    </a>
-                    <span className="navbar-burger burger" data-target="navbarMenu">
-                      <span />
-                      <span />
-                      <span />
-                    </span>
-                  </div>
-                  <div id="navbarMenu" className="navbar-menu">
+               
+                <div id="navbarMenu" className="navbar-menu">
                     <div className="navbar-end">
-                      <div className="tabs is-right">
+                    <div className="tabs is-right">
                         <ul>
-                          <li className="is-active"><a>Home</a></li>
-                          <li><a href>Survey</a></li>
-                          <li><a href>Something</a></li>
-                          <li><a href>Something</a></li>
-                          <li><a href>Log In</a></li>
+                        <li className="is-active"><Link to="/Launch">Home</Link></li>
+                        <li className="is-active"><Link to="/Survey">Survey</Link></li>
+                        <li className="is-active"><Link to="/Login">Log In</Link></li>
                         </ul>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </nav>
+            </div>
+           
+            <div className="hero-body">
+              <div className="container has-text-centered">
+      
+                <div className="box">
+                <h1><strong>We need to know more about you and the habits that affect your longevity:</strong></h1>
+                <br></br>
+                    <div className="field is-horizontal">
+                      <div className="field-label is-normal">
+                        <label className="label">About You</label>
+                      </div>
+                      <div className="field-body">
+                        <div className="field">
+                          <p className="control is-expanded has-icons-left">
+                            <input className="input" type="text" placeholder="Name" />
+                          </p>
+                        </div>
+                        <div className="field">
+                          <p className="control is-expanded has-icons-left has-icons-right">
+                            <input className="input" type="email" placeholder="Email" />
+                          </p>
+                        </div>
                       </div>
                     </div>
+                    <div className="field is-horizontal">
+                      <div className="field-label" />
+                      <div className="field-body">
+                        <div className="field is-expanded">
+                          <div className="field has-addons">
+                            <p className="control is-expanded">
+                              <input className="input" type="password" placeholder="Password" />
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br></br>
+                    <div className="field is-horizontal">
+                      <div className="field-label is-normal">
+                        <label className="label">Do you smoke?</label>
+                      </div>
+                      <div className="field-body">
+                        <div className="field is-narrow">
+                          <div className="control">
+                            <div className="select is-fullwidth">
+                              <select>
+                                <option>Select from</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="field is-horizontal">
+                      <div className="field-label is-normal">
+                        <label className="label">Do you drink alcohol X times per week?</label>
+                      </div>
+                      <div className="field-body">
+                        <div className="field is-narrow">
+                          <div className="control">
+                            <div className="select is-fullwidth">
+                              <select>
+                                <option>Select from</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="field is-horizontal">
+                      <div className="field-label is-normal">
+                        <label className="label">Do you exercise X minutes at least 2 times per week?</label>
+                      </div>
+                      <div className="field-body">
+                        <div className="field is-narrow">
+                          <div className="control">
+                            <div className="select is-fullwidth">
+                              <select>
+                                <option>Select from</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="field is-horizontal">
+                      <div className="field-label is-normal">
+                        <label className="label">Do you eat fast food more than X times per week?</label>
+                      </div>
+                      <div className="field-body">
+                        <div className="field is-narrow">
+                          <div className="control">
+                            <div className="select is-fullwidth">
+                              <select>
+                                <option>Select from</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br></br>
+                    <h1><strong>How would you like to receive your results?</strong></h1>
+                    <div className="field is-text-centered">
+                      <div className="field-label" />
+                      <div className="field-body">
+                        <div className="field is-expanded">
+                          <div className="field has-addons">
+                              <select>
+                                <option>Select from</option>
+                                <option>With appropo doom and despair!</option>
+                                <option>With positivity and hope for change!</option>
+                              </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <h1><strong>Would you like your significant other to test too?</strong></h1>
+                    <div className="field is-text-centered">
+                      <div className="field-label" />
+                      <div className="field-body">
+                        <div className="field is-expanded">
+                          <div className="field has-addons">
+                              <select>
+                                <option>Select from</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                                <option>I don't have a significant other</option>
+                              </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="field is-grouped is-grouped-centered">
+                      <p className="control">
+                        <a className="button is-link">
+                          Submit
+                        </a>
+                      </p>
+                      <p className="control">
+                        <a className="button is-link">
+                          Cancel
+                        </a>
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </nav>
-            </div>
-            <div className="hero-body">
-              <div className="container">
-                <h4>
-                  <strong>Survey Questions</strong>
-                </h4>
-                <hr />
-                <h3>
-                  <strong>About You</strong>
-                </h3>
-                <h4>Name (Required)</h4>
-                <input type="text" id="name" className="form-control" required />
-                <h4>Link to Photo Image (Required)</h4>
-                <input type="text" id="photo" className="form-control" required />
-                <hr />
-                <h3>
-                  <strong>Question 1</strong>
-                </h3>
-                <h4>Do you smoke?</h4>
-                <select className="chosen-select" id="q1">
-                  <option value />
-                  <option value={1}>Yes</option>
-                  <option value={2}>No</option>
-                </select>
-                <h3>
-                  <strong>Question 2</strong>
-                </h3>
-                <h4>Do you smoke more than X amount of times per week?</h4>
-                <select className="chosen-select" id="q2">
-                  <option value />
-                  <option value={1}>Yes</option>
-                  <option value={2}>No</option>
-                </select>
-                <h3>
-                  <strong>Question 3</strong>
-                </h3>
-                <h4>Do you exercise at least X amount of minutes 2 times per week?</h4>
-                <select className="chosen-select" id="q3">
-                  <option value />
-                  <option value={1}>Yes</option>
-                  <option value={2}>No</option>
-                </select>
-                <h3>
-                  <strong>Question 4</strong>
-                </h3>
-                <h4>Do you eat fast food more than X times per week?</h4>
-                <select className="chosen-select" id="q4">
-                  <option value />
-                  <option value={1}>Yes</option>
-                  <option value={2}>No</option>
-                </select>
-                <h3>
-                  <strong>Question 5</strong>
-                </h3>
-                <h4>(Question)</h4>
-                <select className="chosen-select" id="q5">
-                  <option value />
-                  <option value={1}>1</option>
-                  <option value={2}>2</option>
-                  <option value={3}>3</option>
-                  <option value={4}>4</option>
-                  <option value={5}>5</option>
-                </select>
-                <h3>
-                  <strong>Question 6</strong>
-                </h3>
-                <h4>(Question)</h4>
-                <select className="chosen-select" id="q5">
-                  <option value />
-                  <option value={1}>1</option>
-                  <option value={2}>2</option>
-                  <option value={3}>3</option>
-                  <option value={4}>4</option>
-                  <option value={5}>5</option>
-                </select>
-                <h3>
-                  <strong>Question 7</strong>
-                </h3>
-                <h4>(Question)</h4>
-                <select className="chosen-select" id="q5">
-                  <option value />
-                  <option value={1}>1</option>
-                  <option value={2}>2</option>
-                  <option value={3}>3</option>
-                  <option value={4}>4</option>
-                  <option value={5}>5</option>
-                </select>
-                <h3>
-                  <strong>Question 8</strong>
-                </h3>
-                <h4>(Question)</h4>
-                <select className="chosen-select" id="q5">
-                  <option value />
-                  <option value={1}>1</option>
-                  <option value={2}>2</option>
-                  <option value={3}>3</option>
-                  <option value={4}>4</option>
-                  <option value={5}>5</option>
-                </select>
-                <h3>
-                  <strong>Question 9</strong>
-                </h3>
-                <h4>(Question)</h4>
-                <select className="chosen-select" id="q5">
-                  <option value />
-                  <option value={1}>1</option>
-                  <option value={2}>2</option>
-                  <option value={3}>3</option>
-                  <option value={4}>4</option>
-                  <option value={5}>5</option>
-                </select>
-                <h3>
-                  <strong>Question 10</strong>
-                </h3>
-                <h4>(Question)</h4>
-                <select className="chosen-select" id="q5">
-                  <option value />
-                  <option value={1}>1</option>
-                  <option value={2}>2</option>
-                  <option value={3}>3</option>
-                  <option value={4}>4</option>
-                  <option value={5}>5</option>
-                </select>
-                <br />
-                <br />
-                <button type="submit" className="btn btn-primary btn-lg btn-block" id="submit">
-                  <i className="fa fa-check-circle" aria-hidden="true" />
-                  Submit</button>
-              </div>
-            </div>
+                </div>  
+              </div>    
+          
           </section>
-        );
-      }
+           
+    );
+  }
 
 export default Survey;

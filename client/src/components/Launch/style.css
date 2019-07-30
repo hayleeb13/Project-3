@@ -1,0 +1,18 @@
+.hero {
+    background-image: url('../assets/heart-monitor-2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.subtitle {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+.startSurvey {
+    color: white;
+}
