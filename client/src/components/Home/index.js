@@ -16,19 +16,16 @@ function Home() {
                 <div className="tabs is-right">
                   <ul>
                     <li className="is-active">
-                      <a>Home</a>
+                      <Link to="/Launch">Home</Link>
                     </li>
                     <li>
-                      <a href>Survey</a>
+                      <Link to="/Survey">Survey</Link>
                     </li>
                     <li>
-                      <a href>Something</a>
+                      <a href>Results</a>
                     </li>
                     <li>
-                      <a href>Something</a>
-                    </li>
-                    <li>
-                      <a href>Log In</a>
+                      <Link to="/Login">Log In</Link>
                     </li>
                   </ul>
                 </div>

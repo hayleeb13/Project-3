@@ -4,3 +4,15 @@
     background-position: center;
     background-size: cover;
 }
+
+
+.subtitle {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+.startSurvey {
+    color: white;
+}

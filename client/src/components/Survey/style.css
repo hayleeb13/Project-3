@@ -1,0 +1,6 @@
+.hero {
+    background-image: url('../assets/happy-trees.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
