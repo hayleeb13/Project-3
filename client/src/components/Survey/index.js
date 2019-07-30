@@ -83,7 +83,7 @@ function Survey() {
                     </div>
                     <div className="field is-horizontal">
                       <div className="field-label is-normal">
-                        <label className="label">Do you drink alcohol X times per week?</label>
+                        <label className="label">Do you consume more than 5 alcoholic drinks per week?</label>
                       </div>
                       <div className="field-body">
                         <div className="field is-narrow">
@@ -101,7 +101,7 @@ function Survey() {
                     </div>
                     <div className="field is-horizontal">
                       <div className="field-label is-normal">
-                        <label className="label">Do you exercise X minutes at least 2 times per week?</label>
+                        <label className="label">Do you get at least 25 minutes of moderate exercise per day?</label>
                       </div>
                       <div className="field-body">
                         <div className="field is-narrow">
@@ -119,7 +119,7 @@ function Survey() {
                     </div>
                     <div className="field is-horizontal">
                       <div className="field-label is-normal">
-                        <label className="label">Do you eat fast food more than X times per week?</label>
+                        <label className="label">Do you eat more that one processed meal and one processed snack per day?</label>
                       </div>
                       <div className="field-body">
                         <div className="field is-narrow">
@@ -144,8 +144,8 @@ function Survey() {
                           <div className="field has-addons">
                               <select>
                                 <option>Select from</option>
-                                <option>With appropo doom and despair!</option>
-                                <option>With positivity and hope for change!</option>
+                                <option>With appropo doom and despair</option>
+                                <option>With positivity and hope for change</option>
                               </select>
                           </div>
                         </div>
