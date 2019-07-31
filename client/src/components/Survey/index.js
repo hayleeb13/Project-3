@@ -20,10 +20,10 @@ function Survey() {
             <div className="hero-body">
               <div className="container has-text-centered">
 
-                <div className="box">
+                <div className="box has-text-centered">
                 <h1><strong>We need to know more about you and the habits that affect your longevity:</strong></h1>
                 <br></br>
-                    <div className="field is-horizontal">
+                    {/* <div className="field is-horizontal">
                       <div className="field-label is-normal">
                         <label className="label">About You</label>
                       </div>
@@ -51,7 +51,7 @@ function Survey() {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                     <br></br>
                     <div className="field is-horizontal">
                       <div className="field-label is-normal">
@@ -198,7 +198,7 @@ function Survey() {
                       </p>
                       <p className="control">
                         <div className="button is-link">
-                          <Link to="/Launch">
+                          <Link to="/">
                           Cancel
                           </Link>
                         </div>
