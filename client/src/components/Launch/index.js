@@ -1,35 +1,19 @@
 import React from "react";
 import "../Launch/style.css";
 import { Link } from "react-router-dom";
+import Nav from "../Nav/index.js"
 
 function Launch() {
-  return (
+   return (
     <section className="hero is-fullheight is-bold">
-        <div className="hero-head">
-            <nav className="navbar">
-                <div className="container">
-               
-                <div id="navbarMenu" className="navbar-menu">
-                    <div className="navbar-end">
-                    <div className="tabs is-right">
-                        <ul>
-                        <li className="is-active"><Link to="/Launch">Home</Link></li>
-                        <li className="is-active"><Link to="/Survey">Survey</Link></li>
-                        <li className="is-active"><Link to="/Login">Log In</Link></li>
-                        </ul>
-                    </div>
-                    </div>
-                </div>
-                </div>
-            </nav>
-        </div>
+        <Nav/>
         <div className="hero-body">
             <div className="container">
                 <div class="columns is-gapless">
                     <div class="column"></div>
                     <div class="column is-6">
                         <h1 class="title">
-                            <img src="http://xfittrainingeastbay.com/wp-content/uploads/Expiration-Date-1.png"></img>
+                            <img src="http://xfittrainingeastbay.com/wp-content/uploads/Expiration-Date-1.png" alt="expiration-date"></img>
                         </h1>
                     </div>
                     <div class="column">

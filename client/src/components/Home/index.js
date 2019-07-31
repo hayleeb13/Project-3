@@ -65,7 +65,6 @@ function Home() {
           <div className="tabs is-centered">
             <ul>
               <li>
-                <a>Project 3</a>
               </li>
             </ul>
           </div>

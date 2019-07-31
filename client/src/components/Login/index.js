@@ -1,28 +1,12 @@
 import React from "react";
 import "../Login/style.css";
 import { Link } from "react-router-dom";
+import Nav from "../Nav/index.js";
 
 function Login() {
   return (
     <section className="hero is-fullheight is-bold">
-        <div className="hero-head">
-            <nav className="navbar">
-                <div className="container">
-               
-                <div id="navbarMenu" className="navbar-menu">
-                    <div className="navbar-end">
-                    <div className="tabs is-right">
-                        <ul>
-                        <li className="is-active"><Link to="/Launch">Home</Link></li>
-                        <li className="is-active"><Link to="/Survey">Survey</Link></li>
-                        <li className="is-active"><Link to="/Login">Log In</Link></li>
-                        </ul>
-                    </div>
-                    </div>
-                </div>
-                </div>
-            </nav>
-        </div>
+      <Nav/>
 
       <div className="hero-body">
         <div className="container has-text-centered">
