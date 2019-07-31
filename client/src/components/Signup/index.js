@@ -33,9 +33,11 @@ function Signup() {
                     />
                   </div>
                 </div>
+                <Link to="/Login">
                 <button className="button is-block is-info is-large is-fullwidth">
-                  <Link to="/Login">Create Profile</Link>
+                  Create Profile
                 </button>
+                </Link>
               </form>
             </div>
           </div>
