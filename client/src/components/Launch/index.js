@@ -24,9 +24,11 @@ function Launch() {
                         </h1>
                         <br></br>
                         <p className="has-text-centered">
+                        <Link to="/Signup">
                             <div className="signup button">
-                                <Link to="/Signup">Sign Up</Link>
+                                Sign Up
                             </div>
+                            </Link>
                         </p>
                     </div>
                     <div class="column"></div>    

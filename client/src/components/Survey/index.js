@@ -182,18 +182,18 @@ function Survey({ name, handleInputChange, handleFormSubmit}) {
 
                     <div className="field is-grouped is-grouped-centered">
                       <p className="control" id="submit">
+                      <Link to="/Results">
                         <button className="button is-link" type="submit">
-                          <Link to="/Results">
                           Submit
-                          </Link>
                         </button>
+                        </Link>
                       </p>
                       <p className="control">
+                      <Link to="/">
                         <div className="button is-link">
-                          <Link to="/">
                           Cancel
-                          </Link>
                         </div>
+                        </Link>
                       </p>
                     </div>
                   </div>
