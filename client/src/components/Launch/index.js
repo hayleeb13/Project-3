@@ -24,8 +24,8 @@ function Launch() {
                         </h1>
                         <br></br>
                         <p className="has-text-centered">
-                            <div className="startSurvey button">
-                                <Link to="/Survey">Start the Survey!</Link>
+                            <div className="signup button">
+                                <Link to="/Signup">Sign Up</Link>
                             </div>
                         </p>
                     </div>
