@@ -6,8 +6,9 @@ router.route("/")
   .post(userController.create);
 
 router
-  .route("/:id")
+  .route("/:name")
   .get(userController.findById)
+  .post(userController.create)
   .put(userController.update)
   .delete(userController.remove);
 

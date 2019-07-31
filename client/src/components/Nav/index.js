@@ -7,12 +7,11 @@ function Nav() {
 <div className="hero-head">
 <nav className="navbar">
     <div className="container">
-   
     <div id="navbarMenu" className="navbar-menu">
         <div className="navbar-end">
         <div className="tabs is-right">
             <ul>
-            <li className="is-active"><Link to="/Launch">Home</Link></li>
+            <li className="is-active"><Link to="/">Home</Link></li>
             <li className="is-active"><Link to="/Survey">Survey</Link></li>
             <li className="is-active"><Link to="/Login">Log In</Link></li>
             </ul>

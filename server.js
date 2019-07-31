@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/users",
+  process.env.MONGODB_URI || "mongodb://localhost/project-3",
   {
     useCreateIndex: true,
     useNewUrlParser: true

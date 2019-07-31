@@ -9,7 +9,7 @@ import Results from "./components/Results";
 function App() {
   return (
   <Router>
-      <Route exact path="/launch" component={Launch} />
+      <Route exact path="/" component={Launch} />
       <Route exact path="/home" component={Home} />
       <Route exact path="/survey" component={Survey} />
       <Route exact path="/results" component={Results} />

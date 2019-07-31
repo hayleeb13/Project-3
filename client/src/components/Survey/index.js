@@ -1,17 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "../Survey/style.css";
 import { Link } from "react-router-dom";
 import Nav from "../Nav/index.js";
 
-function Survey() {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    console.log(name);
-    console.log(email);
-  };
+function Survey({ name, handleInputChange, handleFormSubmit}) {
 
   return(
           <section className="hero is-fullheight is-default is-bold">
@@ -30,12 +22,12 @@ function Survey() {
                       <div className="field-body">
                         <div className="field">
                           <p className="control is-expanded has-icons-left">
-                            <input className="input" type="text" placeholder="Name" id="name" onChange={e => setName(e.target.value)} />
+                            <input className="input" type="text" placeholder="Name" id="name"/>
                           </p>
                         </div>
                         <div className="field">
                           <p className="control is-expanded has-icons-left has-icons-right">
-                            <input className="input" type="email" placeholder="Email" id="email" onChange={e => setEmail(e.target.value)} />
+                            <input className="input" type="email" placeholder="Email" id="email" />
                           </p>
                         </div>
                       </div>
@@ -189,16 +181,16 @@ function Survey() {
                     </div>
 
                     <div className="field is-grouped is-grouped-centered">
-                      <p className="control" id="submit" onSubmit={handleSubmit}>
-                        <div className="button is-link">
+                      <p className="control" id="submit">
+                        <button className="button is-link" type="submit">
                           <Link to="/Results">
                           Submit
                           </Link>
-                        </div>
+                        </button>
                       </p>
                       <p className="control">
                         <div className="button is-link">
-                          <Link to="/Launch">
+                          <Link to="/">
                           Cancel
                           </Link>
                         </div>
