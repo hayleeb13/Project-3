@@ -33,9 +33,11 @@ function Login() {
                     />
                   </div>
                 </div>
+                <Link to="/Survey">
                 <button className="button is-block is-info is-large is-fullwidth">
-                  <Link to="/Survey">Login</Link>
+                  Login
                 </button>
+                </Link>
               </form>
             </div>
           </div>
