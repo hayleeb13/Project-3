@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../Survey/style.css";
 import { Link } from "react-router-dom";
 import Nav from "../Nav/index.js";
+import axios from "axios";
 
 class Survey extends Component {
   state = {
@@ -93,8 +94,25 @@ class Survey extends Component {
         diet: diet,
         expiration: expiration
       });
+
+      const obj = {
+        gender: gender,
+        age: age,
+        smoke: smoke,
+        drink: drink,
+        exercise: exercise,
+        diet: diet,
+        expiration: expiration
+      };
+
+      console.log(obj.expiration);
+      var newExpiration = obj.expiration;
+      console.log(newExpiration);
+
       this.props.history.push("/Results");
-      //save db
+
+      axios.post('http://localhost:3000/project-3/', obj)
+        .then(res => console.log(res.data));
     }
   }
 
