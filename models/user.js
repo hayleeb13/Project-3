@@ -5,7 +5,7 @@ const userSchema = new Schema({
   name: { type: String, required: true },
   email: { type: String },
   password: { type: String, required: true },
-  expiration: { type: int }
+  expiration: { type: Number }
 });
 
 const User = mongoose.model("User", userSchema);
