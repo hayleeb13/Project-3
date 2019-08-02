@@ -6,7 +6,7 @@ import Nav from "../Nav/index.js";
 function Login() {
   return (
     <section className="hero is-fullheight is-bold">
-      <Nav/>
+      <Nav />
 
       <div className="hero-body">
         <div className="container has-text-centered">
@@ -20,7 +20,7 @@ function Login() {
                       className="input is-large"
                       type="username"
                       placeholder="Username"
-                      autofocus
+                      autoFocus
                     />
                   </div>
                 </div>
@@ -34,9 +34,9 @@ function Login() {
                   </div>
                 </div>
                 <Link to="/Survey">
-                <button className="button is-block is-info is-large is-fullwidth">
-                  Login
-                </button>
+                  <button className="button is-block is-info is-large is-fullwidth">
+                    Login
+                  </button>
                 </Link>
               </form>
             </div>
