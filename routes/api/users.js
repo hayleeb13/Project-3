@@ -9,10 +9,7 @@ router
   .route("/:name")
   .get(userController.findById)
   .post(userController.create)
-  .put(function() {
-    console.log("route users hitting")
-    userController.update
-  })
+  .put(userController.update)
   .delete(userController.remove);
 
 module.exports = router;
