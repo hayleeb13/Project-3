@@ -2,7 +2,7 @@ import React from "react";
 import "../Results/style.css";
 import Nav from "../Nav/index.js";
 import { Link } from "react-router-dom";
-import newExpiration from "../Survey/index";
+import obj from "../Survey/index";
 
 function Results() {
   return (
@@ -15,7 +15,7 @@ function Results() {
               <div className="box has-text-centered" style={{ fontSize: 50 }}>
                 <strong>Years Left!</strong>
                 <br />
-                <strong style={{ color: "red" }}>{newExpiration}</strong>
+                <strong style={{ color: "red" }}>{ obj.expiration }</strong>
                 <br />
               </div>
             </div>
@@ -30,7 +30,9 @@ function Results() {
                 </div>
                 <br />
                 <br />
+                <Link to="Map" target="_blank">
                 <div className="gyms button is-warning">Find nearby gyms</div>
+                </Link>
               </div>
             </div>
           </div>

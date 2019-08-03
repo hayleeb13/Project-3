@@ -6,6 +6,7 @@ import axios from "axios";
 
 class Survey extends Component {
   state = {
+    email: "",
     gender: "",
     age: "",
     smoke: "",
@@ -26,6 +27,7 @@ class Survey extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+    var email = document.getElementById("email").value;
     var gender = document.getElementById("gender").value;
     var age = document.getElementById("age").value;
     var smoke = document.getElementById("smoke").value;
@@ -33,33 +35,26 @@ class Survey extends Component {
     var exercise = document.getElementById("exercise").value;
     var diet = document.getElementById("diet").value;
 
+    if (email === "") {
+      alert("Fill out your email!");
+    }
     if (gender === "Select from") {
       alert("Fill out your gender!");
-      console.log("1", this.state.gender)
     }
     else if (age  === "") {
       alert("Fill out your age!");
-      console.log("2", this.state.age)    
     }
     else if (smoke  === "Select from") {
-      alert("Fill out if you smoke!");
-      console.log("3", this.state.smoke)
-    
+      alert("Fill out if you smoke!");    
     }
     else if (drink  === "Select from") {
-      alert("Fill out if you drink!");
-      console.log("4", this.state.drink)
-    
+      alert("Fill out if you drink!");    
     }
     else if (exercise  === "Select from") {
-      alert("Fill out your exercise habits!");
-      console.log("5", this.state.exercise)
-    
+      alert("Fill out your exercise habits!");    
     }
     else if (diet === "Select from") {
-      alert("Fill out your eating habits!");
-      console.log("6", this.state.diet)
-    
+      alert("Fill out your eating habits!");    
     }else {
 
       var expiration = 0;
@@ -86,6 +81,7 @@ class Survey extends Component {
       console.log(expiration);
 
       this.setState({
+        email: email,
         gender: gender,
         age: age,
         smoke: smoke,
@@ -96,19 +92,10 @@ class Survey extends Component {
       });
 
       const obj = {
-        gender: gender,
-        age: age,
-        smoke: smoke,
-        drink: drink,
-        exercise: exercise,
-        diet: diet,
+        email: email,
         expiration: expiration
       };
-
-      console.log(obj.expiration);
-      var newExpiration = obj.expiration;
-      console.log(newExpiration);
-
+      console.log(obj);
       this.props.history.push("/Results");
 
       axios.post('http://localhost:3000/project-3/', obj)
@@ -134,6 +121,24 @@ class Survey extends Component {
               <br />
               <div className="field is-horizontal">
                 <div className="field-label is-normal">
+                  <label className="label">What is your email?</label>
+                </div>
+                <div className="field-body">
+                  <div className="field is-narrow">
+                    <div className="control">
+                      <input
+                        className="input"
+                        onChange={this.handleInputChange}
+                        type="String"
+                        placeholder="Email"
+                        id="email"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="field is-horizontal">
+                <div className="field-label is-normal">
                   <label className="label">Are you male or female?</label>
                 </div>
                 <div className="field-body">
@@ -143,7 +148,6 @@ class Survey extends Component {
                         <select
                           name={"gender"}
                           onChange={this.handleInputChange}
-                          value={this.state.gender}
                           id="gender"
                           >
                           return (
@@ -175,7 +179,6 @@ class Survey extends Component {
                     <div className="control">
                       <input
                         className="input"
-                        value={this.state.age}
                         onChange={this.handleInputChange}
                         type="number"
                         placeholder="Age"
@@ -196,7 +199,6 @@ class Survey extends Component {
                       <select
                           name={"smoke"}
                           onChange={this.handleInputChange}
-                          value={this.state.smoke}
                           id="smoke"
                           >
                           return (
@@ -232,7 +234,6 @@ class Survey extends Component {
                       <select
                           name={"drink"}
                           onChange={this.handleInputChange}
-                          value={this.state.drink}
                           id="drink"
                           >
                           return (
@@ -268,7 +269,6 @@ class Survey extends Component {
                       <select
                           name={"exercise"}
                           onChange={this.handleInputChange}
-                          value={this.state.exercise}
                           id="exercise"
                           >
                           return (
@@ -305,7 +305,6 @@ class Survey extends Component {
                       <select
                           name={"diet"}
                           onChange={this.handleInputChange}
-                          value={this.state.diet}
                           id="diet"
                           >
                           return (
@@ -329,7 +328,7 @@ class Survey extends Component {
                 </div>
               </div>
               <br />
-              <h1>
+{/*              <h1>
                 <strong>How would you like to receive your results?</strong>
               </h1>
               <div className="field is-text-centered">
@@ -347,7 +346,7 @@ class Survey extends Component {
                     </div>
                   </div>
                 </div>
-              </div>
+</div>
               <h1>
                 <strong>
                   Would you like your significant other to test too?
@@ -369,7 +368,7 @@ class Survey extends Component {
                     </div>
                   </div>
                 </div>
-              </div>
+</div>*/}
 
               <div className="field is-grouped is-grouped-centered">
               <div className="control" id="submit">
