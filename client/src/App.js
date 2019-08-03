@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import Results from "./components/Results";
 import Signup from "./components/Signup";
+import Map from "./components/Map";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route exact path="/results" component={Results} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
+      <Route exact path="/map" component={Map} />
 </Router>
   )
 }
