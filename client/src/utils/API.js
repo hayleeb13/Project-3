@@ -19,6 +19,9 @@ export default {
   },
 
   updateUser: function(name, userData) {
-    return axios.put("/api/users/" + name, userData);
+    console.log("userData", userData)
+    console.log("name", name)
+
+    return axios.put("/api/user/" + name, userData);
   }
 };

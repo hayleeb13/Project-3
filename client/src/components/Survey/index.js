@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../Survey/style.css";
 import { Link } from "react-router-dom";
 import Nav from "../Nav/index.js";
-import axios from "axios";
+import API from "../../utils/API.js";
 
 class Survey extends Component {
   state = {
@@ -92,14 +92,29 @@ class Survey extends Component {
       });
 
       const obj = {
+        name: "Haylee",
         email: email,
+        gender: gender,
+        age: age,
+        smoke: smoke,
+        drink: drink,
+        exercise: exercise,
+        diet: diet,
         expiration: expiration
       };
       console.log(obj);
+      
+      // axios.post('http://localhost:3000/project-3', obj)
+      //   .then(res => console.log(res.data));
+      
+      // put (update)
+       API.updateUser("Haylee", obj).then((data) => {
+       console.log(data.data)
       this.props.history.push("/Results");
 
-      axios.post('http://localhost:3000/project-3/', obj)
-        .then(res => console.log(res.data));
+         })
+      //  
+
     }
   }
 
