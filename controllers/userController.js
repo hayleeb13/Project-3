@@ -17,8 +17,12 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
+    console.log("req", req)
     db.User.findOneAndUpdate({ name: req.params.name }, req.body)
-      .then(dbUser => res.json(dbUser))
+      .then(function(dbUser) {
+        console.log("dbUser", dbUser)
+        res.json(dbUser)
+      })
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {

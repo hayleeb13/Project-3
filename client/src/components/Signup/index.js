@@ -1,12 +1,11 @@
 import React from "react";
-import "../Signup/style.css";
 import { Link } from "react-router-dom";
 import Nav from "../Nav/index.js";
 
 function Signup() {
   return (
     <section className="hero is-fullheight is-bold">
-      <Nav/>
+      <Nav />
 
       <div className="hero-body">
         <div className="container has-text-centered">
@@ -20,7 +19,7 @@ function Signup() {
                       className="input is-large"
                       type="username"
                       placeholder="Username"
-                      autofocus
+                      autoFocus
                     />
                   </div>
                 </div>
@@ -34,9 +33,9 @@ function Signup() {
                   </div>
                 </div>
                 <Link to="/Login">
-                <button className="button is-block is-info is-large is-fullwidth">
-                  Create Profile
-                </button>
+                  <button className="button is-block is-info is-large is-fullwidth">
+                    Create Profile
+                  </button>
                 </Link>
               </form>
             </div>

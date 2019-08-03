@@ -4,39 +4,39 @@ import { Link } from "react-router-dom";
 import Nav from "../Nav/index.js"
 
 function Launch() {
-   return (
+return (
     <section className="hero is-fullheight is-bold">
         <Nav/>
         <div className="hero-body">
             <div className="container">
-                <div class="columns is-gapless">
-                    <div class="column"></div>
-                    <div class="column is-6">
-                        <h1 class="title">
+                <div className="columns is-gapless">
+                    <div className="column"></div>
+                    <div className="column is-6">
+                        <h1 className="title">
                             <img src="http://xfittrainingeastbay.com/wp-content/uploads/Expiration-Date-1.png" alt="expiration-date"></img>
                         </h1>
                     </div>
-                    <div class="column">
-                        <h1 class="subtitle">
+                    <div className="column">
+                        <h1 className="subtitle">
                             <br></br>
                             <br></br>
                             Find out how much time you have left!
                         </h1>
                         <br></br>
-                        <p className="has-text-centered">
+                        <div className="has-text-centered">
                         <Link to="/Signup">
                             <div className="signup button">
                                 Sign Up
                             </div>
                             </Link>
-                        </p>
+                        </div>
                     </div>
-                    <div class="column"></div>    
+                    <div className="column"></div>    
                 </div>
             </div>
         </div>
     </section>
-  );
+);
 }
 
 export default Launch;
