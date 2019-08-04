@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
 
   getUsers: function(name) {
-    return axios.get("/api/user", { params: { name: "name:" + name } });
+    return axios.get("/api/user");
   },
 
   getSavedUsers: function() {

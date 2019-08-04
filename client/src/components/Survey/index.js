@@ -13,13 +13,12 @@ class Survey extends Component {
     drink: "",
     exercise: "",
     diet: "",
-    expiration: "",
+    expiration: ""
   };
 
   handleInputChange = event => {
-
     let value = event.target.value;
-    console.log("handleinput")
+    console.log("handleinput");
     this.setState({
       [event.target.id]: value
     });
@@ -40,41 +39,34 @@ class Survey extends Component {
     }
     if (gender === "Select from") {
       alert("Fill out your gender!");
-    }
-    else if (age  === "") {
+    } else if (age === "") {
       alert("Fill out your age!");
-    }
-    else if (smoke  === "Select from") {
-      alert("Fill out if you smoke!");    
-    }
-    else if (drink  === "Select from") {
-      alert("Fill out if you drink!");    
-    }
-    else if (exercise  === "Select from") {
-      alert("Fill out your exercise habits!");    
-    }
-    else if (diet === "Select from") {
-      alert("Fill out your eating habits!");    
-    }else {
-
+    } else if (smoke === "Select from") {
+      alert("Fill out if you smoke!");
+    } else if (drink === "Select from") {
+      alert("Fill out if you drink!");
+    } else if (exercise === "Select from") {
+      alert("Fill out your exercise habits!");
+    } else if (diet === "Select from") {
+      alert("Fill out your eating habits!");
+    } else {
       var expiration = 0;
-      if(gender === "Male") {
+      if (gender === "Male") {
         expiration = 76;
-      }
-      else if(gender === "Female") {
+      } else if (gender === "Female") {
         expiration = 81;
       }
-      if(smoke === "Yes") {
+      if (smoke === "Yes") {
         expiration -= 10;
       }
-      if(drink === "Yes") {
+      if (drink === "Yes") {
         expiration -= 2;
       }
-      if(diet === "Yes") {
-        var loss = expiration * .14;
+      if (diet === "Yes") {
+        var loss = expiration * 0.14;
         expiration -= loss;
       }
-      if(exercise === "Yes") {
+      if (exercise === "Yes") {
         expiration += 3;
       }
       expiration -= age;
@@ -103,20 +95,18 @@ class Survey extends Component {
         expiration: expiration
       };
       console.log(obj);
-      
+
       // axios.post('http://localhost:3000/project-3', obj)
       //   .then(res => console.log(res.data));
-      
+
       // put (update)
-       API.updateUser("Haylee", obj).then((data) => {
-       console.log(data.data)
-      this.props.history.push("/Results");
-
-         })
-      //  
-
+      API.updateUser("Haylee", obj).then(data => {
+        console.log(data.data);
+        this.props.history.push("/Results");
+      });
+      //
     }
-  }
+  };
 
   render() {
     return (
@@ -164,20 +154,17 @@ class Survey extends Component {
                           name={"gender"}
                           onChange={this.handleInputChange}
                           id="gender"
-                          >
+                        >
                           return (
-                            <option
-                              value={"Select from"}
-                              label={"Select from"}>{"Select from"}
-                            </option>
-                            <option
-                              value={"Male"}
-                              label={"Male"}>{"Male"}
-                            </option>
-                            <option
-                              value={"Female"}
-                              label={"Female"}>{"Female"}
-                            </option>
+                          <option value={"Select from"} label={"Select from"}>
+                            {"Select from"}
+                          </option>
+                          <option value={"Male"} label={"Male"}>
+                            {"Male"}
+                          </option>
+                          <option value={"Female"} label={"Female"}>
+                            {"Female"}
+                          </option>
                           )
                         </select>
                       </div>
@@ -211,24 +198,21 @@ class Survey extends Component {
                   <div className="field is-narrow">
                     <div className="control">
                       <div className="select is-fullwidth">
-                      <select
+                        <select
                           name={"smoke"}
                           onChange={this.handleInputChange}
                           id="smoke"
-                          >
+                        >
                           return (
-                            <option
-                              value={"Select from"}
-                              label={"Select from"}>{"Select from"}
-                            </option>
-                            <option
-                              value={"Yes"}
-                              label={"Yes"}>{"Yes"}
-                            </option>
-                            <option
-                              value={"No"}
-                              label={"No"}>{"No"}
-                            </option>
+                          <option value={"Select from"} label={"Select from"}>
+                            {"Select from"}
+                          </option>
+                          <option value={"Yes"} label={"Yes"}>
+                            {"Yes"}
+                          </option>
+                          <option value={"No"} label={"No"}>
+                            {"No"}
+                          </option>
                           )
                         </select>
                       </div>
@@ -246,24 +230,21 @@ class Survey extends Component {
                   <div className="field is-narrow">
                     <div className="control">
                       <div className="select is-fullwidth">
-                      <select
+                        <select
                           name={"drink"}
                           onChange={this.handleInputChange}
                           id="drink"
-                          >
+                        >
                           return (
-                            <option
-                              value={"Select from"}
-                              label={"Select from"}>{"Select from"}
-                            </option>
-                            <option
-                              value={"Yes"}
-                              label={"Yes"}>{"Yes"}
-                            </option>
-                            <option
-                              value={"No"}
-                              label={"No"}>{"No"}
-                            </option>
+                          <option value={"Select from"} label={"Select from"}>
+                            {"Select from"}
+                          </option>
+                          <option value={"Yes"} label={"Yes"}>
+                            {"Yes"}
+                          </option>
+                          <option value={"No"} label={"No"}>
+                            {"No"}
+                          </option>
                           )
                         </select>
                       </div>
@@ -281,24 +262,21 @@ class Survey extends Component {
                   <div className="field is-narrow">
                     <div className="control">
                       <div className="select is-fullwidth">
-                      <select
+                        <select
                           name={"exercise"}
                           onChange={this.handleInputChange}
                           id="exercise"
-                          >
+                        >
                           return (
-                            <option
-                              value={"Select from"}
-                              label={"Select from"}>{"Select from"}
-                            </option>
-                            <option
-                              value={"Yes"}
-                              label={"Yes"}>{"Yes"}
-                            </option>
-                            <option
-                              value={"No"}
-                              label={"No"}>{"No"}
-                            </option>
+                          <option value={"Select from"} label={"Select from"}>
+                            {"Select from"}
+                          </option>
+                          <option value={"Yes"} label={"Yes"}>
+                            {"Yes"}
+                          </option>
+                          <option value={"No"} label={"No"}>
+                            {"No"}
+                          </option>
                           )
                         </select>
                       </div>
@@ -317,24 +295,21 @@ class Survey extends Component {
                   <div className="field is-narrow">
                     <div className="control">
                       <div className="select is-fullwidth">
-                      <select
+                        <select
                           name={"diet"}
                           onChange={this.handleInputChange}
                           id="diet"
-                          >
+                        >
                           return (
-                            <option
-                              value={"Select from"}
-                              label={"Select from"}>{"Select from"}
-                            </option>
-                            <option
-                              value={"Yes"}
-                              label={"Yes"}>{"Yes"}
-                            </option>
-                            <option
-                              value={"No"}
-                              label={"No"}>{"No"}
-                            </option>
+                          <option value={"Select from"} label={"Select from"}>
+                            {"Select from"}
+                          </option>
+                          <option value={"Yes"} label={"Yes"}>
+                            {"Yes"}
+                          </option>
+                          <option value={"No"} label={"No"}>
+                            {"No"}
+                          </option>
                           )
                         </select>
                       </div>
@@ -343,7 +318,7 @@ class Survey extends Component {
                 </div>
               </div>
               <br />
-{/*              <h1>
+              {/*              <h1>
                 <strong>How would you like to receive your results?</strong>
               </h1>
               <div className="field is-text-centered">
@@ -386,20 +361,20 @@ class Survey extends Component {
 </div>*/}
 
               <div className="field is-grouped is-grouped-centered">
-              <div className="control" id="submit">
-                    <button
-                      onClick={this.handleFormSubmit}
-                      className="button is-link"
-                      type="submit"
-                    >
-                      Submit
-                    </button>
-                  </div>
-                  <div className="control">
-                <Link to="/">
-                  <div className="button is-link">Cancel</div>
-                </Link>
-              </div>
+                <div className="control" id="submit">
+                  <button
+                    onClick={this.handleFormSubmit}
+                    className="button is-link"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>
+                <div className="control">
+                  <Link to="/">
+                    <div className="button is-link">Cancel</div>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -407,6 +382,6 @@ class Survey extends Component {
       </section>
     );
   }
-};
+}
 
 export default Survey;
