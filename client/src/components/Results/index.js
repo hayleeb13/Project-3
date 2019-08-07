@@ -49,7 +49,7 @@ class Results extends Component {
                   </div>
                   <br />
                   <br />
-                  <Link to="Map" target="_blank">
+                  <Link to="/Map" target="_blank">
                     <div className="gyms button is-warning">
                       Find nearby gyms
                     </div>
