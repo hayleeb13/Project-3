@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+var timestamps = require('mongoose-timestamp');
 const bcrypt = require('bcrypt');
 const Schema = mongoose.Schema;
 
@@ -28,6 +29,7 @@ UserSchema.methods.validPassword = function(password){
   return bcrypt.compareSync(password, this.password);
 };
 
+UserSchema.plugin(timestamps);
 const User = mongoose.model("User", UserSchema);
 
 console.log('loading here 6')

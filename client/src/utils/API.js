@@ -2,20 +2,20 @@ import axios from "axios";
 
 export default {
 
-  getUsers: function(name) {
+  getUsers: function() {
     return axios.get("/api/user");
   },
 
-  getSavedUsers: function() {
-    return axios.get("/api/users");
+  getSavedUsers: function(name) {
+    return axios.get("/api/user/name");
   },
 
   deleteUser: function(id) {
-    return axios.delete("/api/users/" + id);
+    return axios.delete("/api/user/" + id);
   },
 
   saveUser: function(userData) {
-    return axios.post("/api/users", userData);
+    return axios.post("/api/user", userData);
   },
 
   updateUser: function(name, userData) {

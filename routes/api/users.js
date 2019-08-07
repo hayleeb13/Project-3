@@ -7,7 +7,7 @@ router.route("/")
 
 router
   .route("/:name")
-  .get(userController.findById)
+  .get(userController.findByName)
   .post(userController.create)
   .put(userController.update)
   .delete(userController.remove);

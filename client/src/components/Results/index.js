@@ -4,7 +4,6 @@ import Nav from "../Nav/index.js";
 import { Link } from "react-router-dom";
 import API from "../../utils/API.js";
 
-
 class Results extends Component {
   state = {
     expiration: 0
@@ -13,12 +12,10 @@ class Results extends Component {
   componentDidMount() {
     this.loadUser();
   }
-
   loadUser = () => {
     API.getUsers()
       .then(res => {
-        console.log(res.data[0].expiration)
-        this.setState({ expiration: res.data[0].expiration })
+        this.setState({ expiration: res.data[0].expiration });
       })
       .catch(err => console.log(err));
   };
@@ -34,7 +31,9 @@ class Results extends Component {
                 <div className="box has-text-centered" style={{ fontSize: 50 }}>
                   <strong>Years Left!</strong>
                   <br />
-                  <strong style={{ color: "red" }}>{this.state.expiration}</strong>
+                  <strong style={{ color: "red" }}>
+                    {this.state.expiration}
+                  </strong>
                   <br />
                 </div>
               </div>
@@ -63,7 +62,9 @@ class Results extends Component {
                   Now that you have your expiration, find your date!
                 </strong>
               </h1>
+              <Link to="/Match" target="_blank">
               <div className="date button is-danger">Don't die alone</div>
+              </Link>
               <br />
               <h1>
                 <strong>Already found your other half?</strong>
