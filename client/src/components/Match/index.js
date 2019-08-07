@@ -6,6 +6,7 @@ import "../Survey/style.css";
 class Match extends Component {
   state = {
     match: "",
+    name: "",
     age: 0,
     email: ""
   };
@@ -30,14 +31,14 @@ class Match extends Component {
           res.data[index].expiration - this.state.expiration > 0 &&
           res.data[index].expiration - this.state.expiration < 30
         ) {
-          this.setState({ match: res.data[index].name });
+          this.setState({ name: res.data[index].name });
           this.setState({ age: res.data[index].age });
           this.setState({ email: res.data[index].email });
         } else if (
           res.data[index].expiration - this.state.expiration < 0 &&
           res.data[index].expiration - this.state.expiration > -30
         ) {
-          this.setState({ match: res.data[index].name });
+          this.setState({ name: res.data[index].name });
           this.setState({ age: res.data[index].age });
           this.setState({ email: res.data[index].email });
         } else {
@@ -58,9 +59,10 @@ class Match extends Component {
                 Till death do us part!
                 <div className="match">
                   <h1 style={{ color: "red" }}>Your Match:</h1>
-                  <h1 style={{ fontSize: 50 }}>{this.state.match}</h1>
+                  <h1 style={{ fontSize: 50 }}>{this.state.name}</h1>
                   <h1 style={{ fontSize: 50 }}>{this.state.age}</h1>
                   <h1 style={{ fontSize: 50 }}>{this.state.email}</h1>
+                  <h1 style={{ fontSize: 50 }}>{this.state.match}</h1>
                 </div>
               </div>
             </div>
