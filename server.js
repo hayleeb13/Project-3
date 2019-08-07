@@ -24,7 +24,7 @@ console.log('loading here 1')
 require('./config/passport.js')(passport);
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join("client", "build")));
+  app.use(express.static(__dirname + "/client/build"));
 }
 
 app.get('/', (req, res) => {
