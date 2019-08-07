@@ -12,6 +12,7 @@ function Nav() {
         <div className="tabs is-right">
             <ul>
             <li className="is-active"><Link to="/">Home</Link></li>
+            <li className="is-active"><Link to="/Survey">Survey</Link></li>
             <li className="is-active"><Link to="/Signup">Sign Up</Link></li>
             <li className="is-active"><Link to="/Login">Log In</Link></li>
             </ul>
