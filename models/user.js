@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+var timestamps = require('mongoose-timestamp');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
@@ -14,6 +15,7 @@ const userSchema = new Schema({
   expiration: { type: Number }
 });
 
+userSchema.plugin(timestamps);
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;

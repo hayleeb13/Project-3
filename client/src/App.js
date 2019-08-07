@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Results from "./components/Results";
 import Signup from "./components/Signup";
 import Map from "./components/Map";
+import Match from "./components/Match";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/map" component={Map} />
+      <Route exact path="/match" component={Match} />
 </Router>
   )
 }
