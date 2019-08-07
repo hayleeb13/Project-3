@@ -111,7 +111,7 @@ class Survey extends Component {
       };
       console.log(obj);
 
-      API.updateUser(name, obj).then(data => {
+      API.saveUser(obj).then(data => {
         console.log(data.data);
         this.props.history.push("/Results");
       });
