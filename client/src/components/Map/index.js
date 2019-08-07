@@ -90,6 +90,7 @@ export class MapContainer extends Component {
                                 {
                                   this.state.gyms.map(result => <Marker onClick={this.onMarkerClick} name={result.name + ": " + result.address} position={result.geocodes}/>)
                                 }
+
                                 <InfoWindow
                                 marker={this.state.activeMarker}
                                 visible={this.state.showingInfoWindow}
