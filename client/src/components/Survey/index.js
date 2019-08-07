@@ -4,8 +4,13 @@ import { Link } from "react-router-dom";
 import Nav from "../Nav/index.js";
 import API from "../../utils/API.js";
 
+function emailValidation (email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
+
 class Survey extends Component {
   state = {
+    name: "",
     email: "",
     gender: "",
     age: "",
@@ -15,6 +20,8 @@ class Survey extends Component {
     diet: "",
     expiration: ""
   };
+
+  
 
   handleInputChange = event => {
     let value = event.target.value;
@@ -26,6 +33,7 @@ class Survey extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+    var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
     var gender = document.getElementById("gender").value;
     var age = document.getElementById("age").value;
@@ -34,13 +42,18 @@ class Survey extends Component {
     var exercise = document.getElementById("exercise").value;
     var diet = document.getElementById("diet").value;
 
-    if (email === "") {
+    if (name === "") {
+      alert("Fill out your name!");
+    } else if (email === "") {
       alert("Fill out your email!");
-    }
-    if (gender === "Select from") {
+    } else if (emailValidation(email) === false) {
+      alert("Provide valid email!")
+    } else if (gender === "Select from") {
       alert("Fill out your gender!");
     } else if (age === "") {
       alert("Fill out your age!");
+    } else if(age < 0 || age > 120) {
+      alert("Please enter valid age");
     } else if (smoke === "Select from") {
       alert("Fill out if you smoke!");
     } else if (drink === "Select from") {
@@ -70,9 +83,11 @@ class Survey extends Component {
         expiration += 3;
       }
       expiration -= age;
+      expiration = Math.round(expiration, 1);
       console.log(expiration);
 
       this.setState({
+        name: name,
         email: email,
         gender: gender,
         age: age,
@@ -84,7 +99,7 @@ class Survey extends Component {
       });
 
       const obj = {
-        name: "Haylee",
+        name: name,
         email: email,
         gender: gender,
         age: age,
@@ -96,15 +111,10 @@ class Survey extends Component {
       };
       console.log(obj);
 
-      // axios.post('http://localhost:3000/project-3', obj)
-      //   .then(res => console.log(res.data));
-
-      // put (update)
-      API.updateUser("Haylee", obj).then(data => {
+      API.saveUser(obj).then(data => {
         console.log(data.data);
         this.props.history.push("/Results");
       });
-      //
     }
   };
 
@@ -124,6 +134,24 @@ class Survey extends Component {
               </h1>
               <br />
               <br />
+              <div className="field is-horizontal">
+                <div className="field-label is-normal">
+                  <label className="label">What is your name?</label>
+                </div>
+                <div className="field-body">
+                  <div className="field is-narrow">
+                    <div className="control">
+                      <input
+                        className="input"
+                        onChange={this.handleInputChange}
+                        type="String"
+                        placeholder="Name"
+                        id="name"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div className="field is-horizontal">
                 <div className="field-label is-normal">
                   <label className="label">What is your email?</label>

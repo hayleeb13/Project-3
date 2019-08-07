@@ -36,7 +36,7 @@ export class MapContainer extends Component {
     };
 
     componentDidMount() {
-
+        
 
 
         var url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=32.7157,-117.1611&radius=16000&type=gym&keyword=gym&key=AIzaSyBpAnHTdTlRhR2CnLcIfJTFszrI_YcaJ7Q`;

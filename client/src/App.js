@@ -7,21 +7,23 @@ import Home from "./components/Home";
 import Results from "./components/Results";
 import Signup from "./components/Signup";
 import Map from "./components/Map";
+import Match from "./components/Match";
 import Recipes from "./components/Recipes";
 
 function App() {
   return (
-  <Router>
+    <Router>
       <Route exact path="/" component={Launch} />
       <Route exact path="/home" component={Home} />
       <Route exact path="/survey" component={Survey} />
       <Route exact path="/results" component={Results} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
-      <Route exact path="/Map" component={Map} />
-      <Route exact path="/Recipes" component={Recipes} />
-</Router>
-  )
+      <Route exact path="/map" component={Map} />
+      <Route exact path="/match" component={Match} />
+      <Route exact path="/recipes" component={Recipes} />
+    </Router>
+  );
 }
 
 export default App;
