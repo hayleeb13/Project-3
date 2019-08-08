@@ -4,6 +4,7 @@ const app = express();
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const passport = require('passport');
+const path = require("path");
 const morgan = require('morgan');     //morgan = logger
 
 const PORT = process.env.PORT || 3001;
@@ -20,18 +21,16 @@ app.use(passport.session())
 
 require('./config/passport.js')(passport);
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+  app.use(express.static(path.join(__dirname + "/client/build")));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
 app.use(routes);
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/project-3",
+  process.env.MONGOLAB_JADE_URI || "mongodb://localhost/project-3",
   {
     useCreateIndex: true,
     useNewUrlParser: true
