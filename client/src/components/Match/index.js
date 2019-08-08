@@ -27,18 +27,19 @@ class Match extends Component {
       for (let index = 0; index < res.data.length; index++) {
         if (
           res.data[index].expiration - this.state.expiration > 0 &&
-          res.data[index].expiration - this.state.expiration < 30
+          res.data[index].expiration - this.state.expiration < 5
         ) {
           this.setState({ match: res.data[index].name });
           this.setState({ email: res.data[index].email });
         } else if (
           res.data[index].expiration - this.state.expiration < 0 &&
-          res.data[index].expiration - this.state.expiration > -30
+          res.data[index].expiration - this.state.expiration > -5
         ) {
           this.setState({ match: res.data[index].name });
           this.setState({ email: res.data[index].email });
         } else {
           this.setState({ match: "You die alone!" });
+          this.setState({ email: "" });
         }
       }
     });
