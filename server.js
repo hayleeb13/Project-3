@@ -18,8 +18,6 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
-console.log('loading here 1')
-
 require('./config/passport.js')(passport);
 
 if (process.env.NODE_ENV === "production") {

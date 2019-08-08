@@ -10,7 +10,7 @@ var isAuthenticated = function (req, res, next) {
 }
 
 router.use("/api", apiRoutes);
-console.log('loading here 4')
+
 
 router.use((req, res) =>
   res.sendFile(path.join(__dirname, "../client/build/index.html"))
@@ -21,5 +21,4 @@ router.use('/user', isAuthenticated, function(req, res){
 });
 
 
-console.log('loading here 5')
 module.exports = router;

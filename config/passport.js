@@ -3,7 +3,6 @@ var LocalStrategy   = require('passport-local').Strategy;
 var bCrypt = require('bcrypt-nodejs')
 const passport = require('passport');
 
-console.log('loading here 7')
 
 module.exports = function(passport) {
     var isValidPassword = function(user, password){
@@ -14,8 +13,6 @@ module.exports = function(passport) {
         return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
        }
 
-       console.log('loading here 2')
-
     // passport link to login page
 
 passport.use('login', new LocalStrategy({
@@ -23,7 +20,7 @@ passport.use('login', new LocalStrategy({
   },
   
   function passportCode(req, username, password, done) { 
-    console.log('loading here 10')
+   
 
     // check db for username
     User.findOne({ 'project-3' :  username }, 
