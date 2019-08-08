@@ -19,8 +19,6 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
-console.log('loading here 1')
-
 require('./config/passport.js')(passport);
 
   app.use(express.static(path.join(__dirname + "/client/build")));
