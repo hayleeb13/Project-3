@@ -53,9 +53,12 @@ class Match extends Component {
           <div className="container has-text-centered">
             <div className="field is-grouped is-grouped-centered">
               <div className="box has-text-centered" style={{ fontSize: 50 }}>
-                Till death do us part!
+                <strong>
+                Till death do you part!
+                </strong>
+                <br></br>
                 <div className="match">
-                  <h1 style={{ color: "red" }}>Your Match:</h1>
+                  <h1 style={{ color: "red" }}>Your <img src="http://xfittrainingeastbay.com/wp-content/uploads/Expiration-Date-1.png" alt="expiration-date" height="200px" width="200px"></img>is:</h1>
                   <h1 style={{ fontSize: 50 }}>{this.state.match}</h1>
                   <h1 style={{ fontSize: 50 }}>{this.state.email}</h1>
                 </div>
