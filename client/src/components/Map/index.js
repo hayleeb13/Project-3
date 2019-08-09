@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import CurrentLocation from "../CurrentLocation/map.js";
-import $ from "jquery"
-// import Nav from "../Nav/index.js";
+import $ from "jquery";
+import Nav from "../Nav/index.js";
+import { isAbsolute } from 'path';
 // import "../Map/style.css";
 
 const mapStyles = {
-  width: '100%',
-  height: '100%'
+  position: isAbsolute,
+  width: "1100px",
+  height: "700px"
 };
 
 export class MapContainer extends Component {
@@ -15,7 +17,6 @@ export class MapContainer extends Component {
       showingInfoWindow: false,
       activeMarker: {},
       selectedPlace: {},
-      selectedGyms: {},
       gyms: []
     };
   
@@ -37,8 +38,6 @@ export class MapContainer extends Component {
 
     componentDidMount() {
         
-
-
         var url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=32.7157,-117.1611&radius=16000&type=gym&keyword=gym&key=AIzaSyBpAnHTdTlRhR2CnLcIfJTFszrI_YcaJ7Q`;
         
         $.ajaxPrefilter(function(options) {
@@ -71,41 +70,41 @@ export class MapContainer extends Component {
 
     render() {
       return (
-        // <section className="hero is-fullheight is-bold">
-        //     <Nav/>
-        //         <div className="hero-body">
-        //             <div className="container">
-        //                 <div className="box">
-                            <CurrentLocation
-                            centerAroundCurrentLocation
-                            google={this.props.google}
-                            >
-                            <Map 
-                                google={this.props.google} 
-                                zoom={12}
-                                style={mapStyles}
-                                initialCenter={{ lat: 32.7157, lng: -117.1611 }}>
-                                <Marker onClick={this.onMarkerClick} name={'Current Location'} 
-                                />
-                                {
-                                  this.state.gyms.map(result => <Marker onClick={this.onMarkerClick} name={result.name + ": " + result.address} position={result.geocodes}/>)
-                                }
+        <section className="hero is-fullheight is-bold">
+            <Nav/>
+              <div style={{padding: "100px"}}className="hero-body">
+                
+                  {/* <CurrentLocation
+                  centerAroundCurrentLocation
+                  google={this.props.google}
+                  > */}
+                    <br></br>
+                    <br></br>
+                    <Map 
+                        google={this.props.google} 
+                        zoom={12}
+                        style={mapStyles}
+                        initialCenter={{ lat: 32.7157, lng: -117.1611 }}>
+                        <Marker onClick={this.onMarkerClick} name={'Current Location'} 
+                        />
+                        {
+                          this.state.gyms.map(result => <Marker onClick={this.onMarkerClick} name={result.name + ": " + result.address} position={result.geocodes}/>)
+                        }
 
-                                <InfoWindow
-                                marker={this.state.activeMarker}
-                                visible={this.state.showingInfoWindow}
-                                onClose={this.onClose}
-                                >
-                                <div>
-                                    <h4>{this.state.selectedPlace.name}</h4>
-                                </div>
-                                </InfoWindow>
-                            </Map>
-                            </CurrentLocation>
-        //                 </div>
-        //             </div>
-        //         </div>
-        // </section>
+                        <InfoWindow
+                        marker={this.state.activeMarker}
+                        visible={this.state.showingInfoWindow}
+                        onClose={this.onClose}
+                        >
+                        <div>
+                            <h4>{this.state.selectedPlace.name}</h4>
+                        </div>
+                        </InfoWindow>
+                    </Map>
+                  {/* </CurrentLocation> */}
+                
+              </div>
+        </section>
       );
     }
   }

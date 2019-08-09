@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Nav() {
   return(
 <div className="hero-head">
-<nav className="navbar">
+<nav style={{zIndex:10}} className="navbar">
     <div className="container">
     <div id="navbarMenu" className="navbar-menu">
         <div className="navbar-end">

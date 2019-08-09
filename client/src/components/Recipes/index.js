@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import $ from "jquery";
+import Nav from "../Nav";
 
 function refreshPage () {
   window.location.reload();
@@ -56,24 +57,44 @@ class Recipes extends Component {
     }
     console.log("final array: ", array);
     return (
-      <div>
-        <strong>
-          <center>
-            <h1 style={{ padding: "20px", fontSize: "40px" }}>{this.state.mealname}</h1>
-          </center>
-        </strong>
-        <center>
-          <h6 style={{ padding: "20px" }}>{this.state.instructions}</h6>
-        </center>
-        <div style={{ padding: "30px" }} className="card">
-          <div className="card-body">
-              {array.map(recipe => (
-                <li className="card-text">{recipe}</li>
-              ))}
-          </div>
+      <section className="hero is-fullheight is-default is-bold">
+        <Nav />
+        <div className="hero-body">
+          <div className="container">
+            <div className="row columns">
+              <div className="column is-one-half">
+                <div className="card large">
+                  <div style={{padding: "10px"}}>
+                      <center>
+                        <h1 style={{fontSize: "30px", color: 'green'}}><strong>{this.state.mealname}</strong></h1>
+                      </center>
+                      <br></br>
+                      <div className="row columns">
+                        <div className="column is-one-half">
+                          <div style={{ padding: "30px" }} className="card">
+                            <div className="card-body">
+                              <h6><center>{this.state.instructions}</center></h6>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="column is-one-half">
+                          <div style={{ padding: "30px" }} className="card">
+                            <div className="card-body">
+                                {array.map(recipe => (
+                                  <li className="card-text">{recipe}</li>
+                                ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                            <center style={{ padding: "30px" }} ><button onClick = { refreshPage } className="recipes button is-success">New Recipe</button></center>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
         </div>
-              <center style={{ padding: "30px" }} ><button onClick = { refreshPage } className="recipes button is-success">New Recipe</button></center>
-      </div>
+    </section>  
     );
   }
 }
