@@ -19,8 +19,6 @@ const UserSchema = new Schema({
 
 //bcrypt code to hash password
 
-console.log('loading here 3')
-
 UserSchema.methods.generateHash = function(password){
   return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
@@ -32,5 +30,4 @@ UserSchema.methods.validPassword = function(password){
 UserSchema.plugin(timestamps);
 const User = mongoose.model("User", UserSchema);
 
-console.log('loading here 6')
 module.exports = User;

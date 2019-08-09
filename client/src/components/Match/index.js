@@ -39,6 +39,7 @@ class Match extends Component {
           this.setState({ email: res.data[index].email });
         } else {
           this.setState({ match: "You die alone!" });
+          this.setState({ email: "" });
         }
       }
     });
