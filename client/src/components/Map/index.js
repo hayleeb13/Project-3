@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
-import CurrentLocation from "../CurrentLocation/map.js";
+// import CurrentLocation from "../CurrentLocation/map.js";
 import $ from "jquery";
 import Nav from "../Nav/index.js";
 import { isAbsolute } from 'path';
