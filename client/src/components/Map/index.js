@@ -38,7 +38,7 @@ export class MapContainer extends Component {
 
     componentDidMount() {
         
-        var url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=32.7157,-117.1611&radius=16000&type=gym&keyword=gym&key=AIzaSyBpAnHTdTlRhR2CnLcIfJTFszrI_YcaJ7Q`;
+        var url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=32.7157,-117.1611&radius=16000&type=gym&keyword=gym&key=${process.env.REACT_APP_MAP_API_KEY}`;
         
         $.ajaxPrefilter(function(options) {
           if (options.crossDomain && $.support.cors) {
@@ -112,6 +112,6 @@ export class MapContainer extends Component {
   
   export default GoogleApiWrapper(
       (props) => ({
-        apiKey: 'AIzaSyBpAnHTdTlRhR2CnLcIfJTFszrI_YcaJ7Q',
+        apiKey: process.env.REACT_APP_MAP_API_KEY,
       }
     ))(MapContainer)
