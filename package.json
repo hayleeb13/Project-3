@@ -33,7 +33,7 @@
     "google-map-react": "^1.1.4",
     "google-maps-react": "^2.0.2",
     "if-env": "^1.0.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "mime": "^2.4.4",
     "mongoose": "^5.7.5",
     "mongoose-timestamp": "^0.6.0",
